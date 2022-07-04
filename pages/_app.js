@@ -19,7 +19,10 @@ function MyApp({ Component, pageProps }) {
         body {
           padding: 0;
           margin: 0;
-          background: #f9fbf8;
+          height: 100vh;
+          background: rgb(34,1,69);
+          background: radial-gradient(circle, rgba(34,1,69,1) 0%, rgba(55,1,1,1) 100%);
+          background-repeat: no-repeat;
         }
 
         * {

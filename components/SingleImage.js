@@ -23,7 +23,17 @@ const backVariants = {
   enter: { x: 0, opacity: 1, transition: { delay: 1, ...transition } },
 }
 
-const SingleImage = ({ index }) => (
+const SingleImage = ({ index }) => {
+  const getLink = () => {
+    if (index !== 5) {
+      let newIndex = index + 1
+      return `/circulo/${newIndex}`
+    } else {
+      return "/"
+    }
+  }
+
+  return (
   <>
     <motion.div className="single" initial="exit" animate="enter" exit="exit">
       <motion.img
@@ -32,8 +42,8 @@ const SingleImage = ({ index }) => (
         alt="The Barbican"
       />
       <motion.div className="back" variants={backVariants}>
-        <Link href="/">
-          <a>← Back</a>
+        <Link href={getLink()}>
+          <a>Siguiente parada</a>
         </Link>
       </motion.div>
     </motion.div>
@@ -55,14 +65,16 @@ const SingleImage = ({ index }) => (
             right: 50px;
             font-size: 54px;
             z-index: 1;
+            
         }
 
         .back a {
             text-decoration: none;
+            color: rgba(255, 255, 255, .3);
         }
 `}
     </style>
   </>
-)
+)}
 
 export default SingleImage
