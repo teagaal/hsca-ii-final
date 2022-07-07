@@ -5,6 +5,9 @@ import Page3 from "../../components/Page3";
 import Page4 from "../../components/Page4";
 import Page5 from "../../components/Page5";
 import Page6 from "../../components/Page6";
+import Page7 from "../../components/Page7";
+import Page8 from "../../components/Page8";
+import Page9 from "../../components/Page9";
 import { images } from "../../constants";
 
 function getComponent(index) {
@@ -21,10 +24,17 @@ function getComponent(index) {
       return <Page5 index={index} />;
     case 5:
       return <Page6 index={index} />;
+    case 6:
+      return <Page7 index={index} />;
+    case 7:
+      return <Page8 index={index} />;
+    case 8:
+      return <Page9 index={index} />;
   }
 }
 
 const Page = ({ index }) => {
+  console.log(index);
   return getComponent(index);
 };
 

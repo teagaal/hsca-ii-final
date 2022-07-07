@@ -26,14 +26,20 @@ const SingleImage = ({ index }) => {
   return (
     <>
       <div className="single">
-        <div className="image-container">
-          <video src="/images/anatomia.webm" autoPlay loop className="video">
-            Tu navegador no admite el elemento <code>video</code>.
-          </video>
+        <div className="container">
+          <iframe
+            width="1000"
+            height="800"
+            src="https://www.youtube-nocookie.com/embed/B8dCWnw4U5M?controls=0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </div>
         <motion.div className="back" variants={backVariants}>
           <Link href={getLink(index)}>
-            <a>Page 2</a>
+            <a>Page 1</a>
           </Link>
         </motion.div>
       </div>
@@ -49,16 +55,11 @@ const SingleImage = ({ index }) => {
             max-height: 100vh;
         }
 
-        .image-container {
-            height: 100%;
+        .container {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-        }
-
-        .video {
-          height: 100%;
         }
 
         .back {

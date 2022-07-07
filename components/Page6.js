@@ -25,13 +25,24 @@ const backVariants = {
 const SingleImage = ({ index }) => {
   return (
     <>
-      <motion.div className="single" initial="exit" animate="enter" exit="exit">
+      <div className="single">
+        <div className="container">
+          <iframe
+            width="800"
+            height="600"
+            src="https://www.youtube-nocookie.com/embed/X4uUB0PW7Cg?controls=0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
         <motion.div className="back" variants={backVariants}>
           <Link href={getLink(index)}>
             <a>Page 6</a>
           </Link>
         </motion.div>
-      </motion.div>
+      </div>
       <style>
         {`
         .single {
@@ -42,6 +53,13 @@ const SingleImage = ({ index }) => {
         .single img {
             max-width: 100%;
             max-height: 100vh;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         .back {

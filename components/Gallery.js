@@ -1,11 +1,10 @@
 import * as React from "react";
 import Link from "next/link";
-
 import { motion } from "framer-motion";
 import { images } from "../constants";
 
 const radius = 300;
-const imgs = 6;
+const imgs = 9;
 const containerWidth = 600;
 const containerHeight = 600;
 let angle = 0;
@@ -46,8 +45,8 @@ const Thumbnail = ({ id, i, x, y }) => (
       >
         <Link href="/circulo/[index]" as={`/circulo/${i}`} scroll={false}>
           <motion.img
-            src={`https://images.unsplash.com/${id}?auto=format&fit=crop&w=1500`}
-            alt="The Barbican"
+            src={id}
+            alt=""
             variants={imageVariants}
             transition={transition}
           />
@@ -111,12 +110,6 @@ const Gallery = () => (
     </div>
     <style>
       {`
-        @import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
-
-        body {
-          font-family: 'Homemade Apple', cursive;
-        }
-        
         h1 {
             font-size: 100px;
             text-align: center;
@@ -130,7 +123,7 @@ const Gallery = () => (
         }
 
         .gallery {
-            border: 1px solid rgba(255, 255, 255, .1);
+            border: 1px solid rgba(255, 255, 255, .2);
             border-radius: 100%;
             padding: 40px;
             margin: 0 auto;
