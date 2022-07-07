@@ -27,7 +27,9 @@ const SingleImage = ({ index }) => {
     <>
       <div className="single">
         <div className="image-container">
-          <img src="/images/Comp1.gif" alt="" />
+          <video src="/images/Comp1.webm" autoPlay>
+            Tu navegador no admite el elemento <code>video</code>.
+          </video>
         </div>
         <motion.div className="back" variants={backVariants}>
           <Link href={getLink(index)}>
