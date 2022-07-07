@@ -25,13 +25,19 @@ const backVariants = {
 const SingleImage = ({ index }) => {
   return (
     <>
-      <motion.div className="single" initial="exit" animate="enter" exit="exit">
+      <div className="single">
+        <div className="image-container">
+          <img src="/images/trans1.gif" alt="" />
+        </div>
+        <div className="image-container">
+          <img src="/images/trans2.gif" alt="" />
+        </div>
         <motion.div className="back" variants={backVariants}>
           <Link href={getLink(index)}>
             <a>Page 4</a>
           </Link>
         </motion.div>
-      </motion.div>
+      </div>
       <style>
         {`
         .single {
@@ -42,6 +48,17 @@ const SingleImage = ({ index }) => {
         .single img {
             max-width: 100%;
             max-height: 100vh;
+        }
+
+        .image-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .image-container:nth-child(2) {
+          width: 250px;
         }
 
         .back {
