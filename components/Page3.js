@@ -27,7 +27,7 @@ const SingleImage = ({ index }) => {
     <>
       <div className="single">
         <div className="image-container">
-          <video src="/images/Comp1.webm" autoPlay loop>
+          <video src="/images/Comp1.webm" autoPlay loop className="video">
             Tu navegador no admite el elemento <code>video</code>.
           </video>
         </div>
@@ -42,7 +42,7 @@ const SingleImage = ({ index }) => {
         .single {
             overflow: hidden;
             height: 100vh;
-            background-image: url('/images/imagen1.jpg');
+            background-image: url('/images/imagen1.webp');
         }
 
         .single img {
@@ -52,9 +52,13 @@ const SingleImage = ({ index }) => {
 
         .image-container {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top: 55%;
+            left: 15%;
+            width: 250px;
+        }
+
+        .video {
+          width: 100%;
         }
 
         .back {
