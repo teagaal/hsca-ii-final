@@ -26,15 +26,17 @@ const SingleImage = ({ index }) => {
   return (
     <>
       <div className="single">
-        <div className="image-container">
-          <img src="/images/trans1.gif" alt="" />
-        </div>
-        <div className="image-container">
-          <img src="/images/trans2.gif" alt="" />
+        <div className="container">
+          <div className="image-container">
+            <img src="/images/trans1.gif" alt="" />
+          </div>
+          <div className="image-container">
+            <img src="/images/trans2.gif" alt="" />
+          </div>
         </div>
         <motion.div className="back" variants={backVariants}>
           <Link href={getLink(index)}>
-            <a>Page 4</a>
+            <a>circular</a>
           </Link>
         </motion.div>
       </div>
@@ -50,15 +52,20 @@ const SingleImage = ({ index }) => {
             max-height: 100vh;
         }
 
-        .image-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .container {
+          display: flex;
+          align-items: end;
+          justify-content: space-between;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 60%;
         }
 
         .image-container:nth-child(2) {
-          width: 250px;
+          width: 350px;
+          margin-bottom: 90px;
         }
 
         .back {
@@ -67,7 +74,11 @@ const SingleImage = ({ index }) => {
             right: 50px;
             font-size: 54px;
             z-index: 1;
-            
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            letter-spacing: 10px;
+            font-size: 80px;
+            font-family: cursive;
         }
 
         .back a {

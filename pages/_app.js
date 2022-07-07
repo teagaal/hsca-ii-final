@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
           margin: 0;
           height: 100vh;
           background: rgb(34,1,69);
-background: radial-gradient(circle, rgba(34,1,69,1) 0%, rgba(43,7,0,1) 100%);
+          background: radial-gradient(circle, rgba(34,1,69,1) 0%, rgba(43,7,0,1) 100%);
           background-repeat: no-repeat;
         }
 

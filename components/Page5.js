@@ -31,7 +31,7 @@ const SingleImage = ({ index }) => {
         </div>
         <motion.div className="back" variants={backVariants}>
           <Link href={getLink(index)}>
-            <a>Page 5</a>
+            <a>circular</a>
           </Link>
         </motion.div>
       </div>
@@ -41,6 +41,7 @@ const SingleImage = ({ index }) => {
             overflow: hidden;
             height: 100vh;
             background-image: url('/images/divorcio.jpg');
+            background-repeat: no-repeat;
         }
 
         .single img {
@@ -61,12 +62,16 @@ const SingleImage = ({ index }) => {
             right: 50px;
             font-size: 54px;
             z-index: 1;
-            
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            letter-spacing: 10px;
+            font-size: 80px;
+            font-family: cursive;
         }
 
         .back a {
             text-decoration: none;
-            color: rgba(255, 255, 255, .3);
+            color: rgba(0, 0, 255, .3);
         }
 `}
       </style>

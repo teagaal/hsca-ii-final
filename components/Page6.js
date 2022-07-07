@@ -28,18 +28,17 @@ const SingleImage = ({ index }) => {
       <div className="single">
         <div className="container">
           <iframe
-            width="800"
-            height="600"
-            src="https://www.youtube-nocookie.com/embed/X4uUB0PW7Cg?controls=0"
-            title="YouTube video player"
+            src="https://player.vimeo.com/video/727811231?h=47f06c11cb&autoplay=1"
+            width="640"
+            height="329"
             frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allow="autoplay; fullscreen; picture-in-picture"
             allowfullscreen
           ></iframe>
         </div>
         <motion.div className="back" variants={backVariants}>
           <Link href={getLink(index)}>
-            <a>Page 6</a>
+            <a>circular</a>
           </Link>
         </motion.div>
       </div>
@@ -68,7 +67,11 @@ const SingleImage = ({ index }) => {
             right: 50px;
             font-size: 54px;
             z-index: 1;
-            
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            letter-spacing: 10px;
+            font-size: 80px;
+            font-family: cursive;
         }
 
         .back a {

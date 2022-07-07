@@ -39,7 +39,7 @@ const SingleImage = ({ index }) => {
         </div>
         <motion.div className="back" variants={backVariants}>
           <Link href={getLink(index)}>
-            <a>Page 1</a>
+            <a>circular</a>
           </Link>
         </motion.div>
       </div>
@@ -68,7 +68,11 @@ const SingleImage = ({ index }) => {
             right: 50px;
             font-size: 54px;
             z-index: 1;
-            
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            letter-spacing: 10px;
+            font-size: 80px;
+            font-family: cursive;
         }
 
         .back a {

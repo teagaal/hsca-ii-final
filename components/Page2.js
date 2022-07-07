@@ -33,7 +33,7 @@ const SingleImage = ({ index }) => {
         </div>
         <motion.div className="back" variants={backVariants}>
           <Link href={getLink(index)}>
-            <a>Page 2</a>
+            <a>circular</a>
           </Link>
         </motion.div>
       </div>
@@ -50,7 +50,7 @@ const SingleImage = ({ index }) => {
         }
 
         .image-container {
-            height: 100%;
+            width: 800px;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -58,7 +58,7 @@ const SingleImage = ({ index }) => {
         }
 
         .video {
-          height: 100%;
+          width: 100%;
         }
 
         .back {
@@ -67,7 +67,11 @@ const SingleImage = ({ index }) => {
             right: 50px;
             font-size: 54px;
             z-index: 1;
-            
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            letter-spacing: 10px;
+            font-size: 80px;
+            font-family: cursive;
         }
 
         .back a {

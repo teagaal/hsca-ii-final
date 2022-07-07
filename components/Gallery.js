@@ -95,7 +95,7 @@ const Thumbnail = ({ id, i, x, y }) => (
 
 const Gallery = () => (
   <>
-    {/* <h1>Drácula, el otro</h1> */}
+    <h1>draculizaciones</h1>
     <div className="gallery">
       {images.map((id, i) => {
         let x = Math.round(
@@ -111,12 +111,16 @@ const Gallery = () => (
     <style>
       {`
         h1 {
-            font-size: 100px;
+            font-size: 150px;
+            font-family: cursive;
             text-align: center;
+            text-shadow:
+		            -1px -1px 1px rgba(255, 255, 255, 0.30),
+		            1px 1px 1px rgba(0, 0, 0, 0.20);
             position: fixed;
-            bottom: -100px;
+            top: -120px;
             z-index: 1;
-            color: #f9fbf8;
+            color:  rgba(43,7,0,1);
             left: 50%;
             transform: translateX(-50%);
             pointer-events: none;
@@ -141,33 +145,6 @@ const Gallery = () => (
             flex-direction: row;
             justify-content: space-between;
         }
-
-         @media screen and (min-width: 600px) {
-           h1 {
-             font-size: 140px;
-             bottom: -130px;
-           }
-         }
-
-         @media screen and (min-width: 800px) {
-           h1 {
-             font-size: 180px;
-             bottom: -170px;
-           }
-         }
-
-         @media screen and (min-width: 1000px) {
-           h1 {
-             font-size: 220px;
-             bottom: -200px;
-           }
-         }
-         @media screen and (min-width: 1200px) {
-           h1 {
-             font-size: 280px;
-             bottom: -260px;
-           }
-         }
         `}
     </style>
   </>
