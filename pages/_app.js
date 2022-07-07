@@ -1,14 +1,14 @@
-import { AnimatePresence } from 'framer-motion'
-import { useRouter } from 'next/router'
+import { AnimatePresence } from "framer-motion";
+import { useRouter } from "next/router";
 
 function handleExitComplete() {
-  if (typeof window !== 'undefined') {
-    window.scrollTo({ top: 0 })
+  if (typeof window !== "undefined") {
+    window.scrollTo({ top: 0 });
   }
 }
 
 function MyApp({ Component, pageProps }) {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <>
       <AnimatePresence exitBeforeEnter onExitComplete={handleExitComplete}>
@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
           margin: 0;
           height: 100vh;
           background: rgb(34,1,69);
-          background: radial-gradient(circle, rgba(34,1,69,1) 0%, rgba(55,1,1,1) 100%);
+background: radial-gradient(circle, rgba(34,1,69,1) 0%, rgba(43,7,0,1) 100%);
           background-repeat: no-repeat;
         }
 
@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }) {
       `}
       </style>
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

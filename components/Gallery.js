@@ -1,17 +1,17 @@
-import * as React from 'react'
-import Link from 'next/link'
+import * as React from "react";
+import Link from "next/link";
 
-import { motion } from 'framer-motion'
-import { images } from '../constants'
+import { motion } from "framer-motion";
+import { images } from "../constants";
 
 const radius = 300;
 const imgs = 6;
 const containerWidth = 600;
 const containerHeight = 600;
 let angle = 0;
-const step = (2*Math.PI) / imgs;
+const step = (2 * Math.PI) / imgs;
 
-const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }
+const transition = { duration: 1.0, ease: [0.43, 0.13, 0.23, 0.96] };
 
 const thumbnailVariants = {
   initial: { scale: 0.9, opacity: 0 },
@@ -21,19 +21,23 @@ const thumbnailVariants = {
     opacity: 0,
     transition: { duration: 1.5, ...transition },
   },
-}
+};
 
 const frameVariants = {
   hover: { scale: 0.95 },
-}
+};
 
 const imageVariants = {
   hover: { scale: 1.1 },
-}
+};
 
 const Thumbnail = ({ id, i, x, y }) => (
   <>
-    <motion.div className="thumbnail" variants={thumbnailVariants} style={{left: `${x}px`, top: `${y}px`}}>
+    <motion.div
+      className="thumbnail"
+      variants={thumbnailVariants}
+      style={{ left: `${x}px`, top: `${y}px` }}
+    >
       <motion.div
         className="frame"
         whileHover="hover"
@@ -78,6 +82,7 @@ const Thumbnail = ({ id, i, x, y }) => (
             .frame:hover {
               -webkit-filter: invert(.9);
               filter: invert(.9);
+              transition: 1s;
             }
 
             .thumbnail img {
@@ -87,22 +92,31 @@ const Thumbnail = ({ id, i, x, y }) => (
         `}
     </style>
   </>
-)
+);
 
 const Gallery = () => (
   <>
     {/* <h1>Drácula, el otro</h1> */}
     <div className="gallery">
-        {images.map((id, i) => { 
-          let x = Math.round(containerWidth/2 + radius * Math.cos(angle) - 100/2);
-          let y = Math.round(containerHeight/2 + radius * Math.sin(angle) - 100/2);
-          angle += step;
-          return (
-          <Thumbnail key={id} id={id} i={i} x={x} y={y} />
-        )})}
+      {images.map((id, i) => {
+        let x = Math.round(
+          containerWidth / 2 + radius * Math.cos(angle) - 100 / 2
+        );
+        let y = Math.round(
+          containerHeight / 2 + radius * Math.sin(angle) - 100 / 2
+        );
+        angle += step;
+        return <Thumbnail key={id} id={id} i={i} x={x} y={y} />;
+      })}
     </div>
     <style>
       {`
+        @import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
+
+        body {
+          font-family: 'Homemade Apple', cursive;
+        }
+        
         h1 {
             font-size: 100px;
             text-align: center;
@@ -164,6 +178,6 @@ const Gallery = () => (
         `}
     </style>
   </>
-)
+);
 
-export default Gallery
+export default Gallery;
