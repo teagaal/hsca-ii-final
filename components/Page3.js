@@ -27,7 +27,7 @@ const SingleImage = ({ index }) => {
     <>
       <div className="single">
         <div className="image-container">
-          <video src="/images/Comp1.webm" autoPlay>
+          <video src="/images/Comp1.webm" autoPlay loop>
             Tu navegador no admite el elemento <code>video</code>.
           </video>
         </div>
